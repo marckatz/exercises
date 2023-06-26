@@ -1,0 +1,15 @@
+{
+  "workouts":[
+      {
+          "id":1,
+          "date":"06262023",
+          "time":"0900",
+          "duration":3,
+          "exercises":[
+              "Single-leg glute bridge",
+              "Step-up with knee raise",
+              "Kettlebell thruster"
+          ]
+      }
+  ]
+}
