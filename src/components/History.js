@@ -7,7 +7,7 @@ function History(){
     const [nextID, setNextID] = useState(0)
 
     function addWorkout(name){
-        setHistory(h => [...h, <Workout id={nextID} key={nextID} name={name}/>])
+        setHistory(h => [...h, <Workout/>])
         setNextID(id => id+1)
     }
 

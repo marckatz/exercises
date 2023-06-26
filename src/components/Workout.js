@@ -1,10 +1,12 @@
 import React from "react";
+import Exercise from "./Exercise";
 
-function Workout({id, name}){
+function Workout({exercises}){
+    const exerciseList = exercises.map(e => <li><Exercise exerciseObj={e}/></li>)
     return (
-        <div>
-            <p>Workout #{id}: {name}</p>
-        </div>
+        <ul>
+            {exerciseList}
+        </ul>
     )
 }
 
