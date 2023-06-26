@@ -1,15 +1,30 @@
-import React, { Children, useState } from "react";
-import Workout from "./Workout";
+import React, { Children, useEffect, useState } from "react";
+import Exercise from "./Exercise";
 
 function Browse(){
+    const apikey = "BKMqWAGjMtOVWzFo/8vxwg==KwbEyVqZ4bH5TYrM"
     const [muscle, setMuscle] = useState("")
+    const [page, setPage] = useState(0)
     const [returnedExercises, setReturned] = useState([])
+
+    useEffect(() => {
+        if(muscle){
+            fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
+                headers:{
+                    "X-Api-Key":apikey,
+                    "content-type":"application/json"
+                }
+            })
+            .then(r => r.json())
+            .then(exercises => setReturned(exercises))
+        }
+    },[page])
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
+        fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
             headers:{
-                "X-Api-Key":"",
+                "X-Api-Key":apikey,
                 "content-type":"application/json"
             }
         })
@@ -18,11 +33,19 @@ function Browse(){
     }
 
     function displayReturned(exercises){
-        return Children.toArray(exercises.map(exercise => <li><Workout name={exercise.name}/></li>))
+        return Children.toArray(exercises.map(exercise => <li><Exercise exerciseObj={exercise}/></li>))
     }
 
     function handleMuscleChange(e){
         setMuscle(e.target.value)
+    }
+
+    function nextPage(){
+        setPage(p => p+1)
+    }
+
+    function previousPage(){
+        setPage(p => p>0?p+1:p)
     }
 
     return (
@@ -35,6 +58,8 @@ function Browse(){
             <ul>
                 {displayReturned(returnedExercises)}
             </ul>
+            <button onClick={previousPage}>&lt;</button>
+            <button onClick={nextPage}>&gt;</button>
         </div>
     )
 }
