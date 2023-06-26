@@ -1,15 +1,19 @@
-import React, {useState } from "react";
+import React, {useEffect, useState } from "react";
 import Workout from "./Workout";
 import WorkoutForm from "./WorkoutForm";
 
 function History(){
     const [history, setHistory] = useState([])
-    const [nextID, setNextID] = useState(0)
 
     function addWorkout(name){
-        setHistory(h => [...h, <Workout/>])
-        setNextID(id => id+1)
+        return 0
     }
+
+    useEffect(() => {
+        fetch('http://localhost:3001/workouts/')
+        .then(r => r.json())
+        .then(w => console.log(w))
+    }, [])
 
     return (
         <div>
