@@ -2,13 +2,10 @@
 
     "profile": [
       {
-        "name": "name",
-        "streak": "3 Days",
-        "Total Workouts": "5",
-        "Workouts Per Week": "4"
-        
-
-
+        "name": "Jack Skellington",
+        "streak": "",
+        "totalWorkouts": "",
+        "workoutsPerWeek": ""
       }
     ],
 
