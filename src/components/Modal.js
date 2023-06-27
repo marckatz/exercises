@@ -25,8 +25,7 @@ const Modal = ({ open, onClose }) => {
             X
           </p>
           <div className='content'>
-            <h1>Workout Started</h1>
-            <p>blah blah blah</p>
+            <h1>Start Workout</h1>
           </div>
           <div>
             <WorkoutForm addWorkout={addWorkout}/>
