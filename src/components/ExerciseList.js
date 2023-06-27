@@ -1,9 +1,10 @@
 import React from "react";
 
-function Excersize({exerciseObj}){
+function Excercise({exerciseObj}){
     const {name, type, muscle, equipment, difficulty, instructions} = exerciseObj
     return (
         <div>
+            <button> + Exercise  </button>
             <h3>{name}</h3>
             <ul>
                 <li>Type: {type}</li>
@@ -16,4 +17,4 @@ function Excersize({exerciseObj}){
     )
 }
 
-export default Excersize
+export default Excercise

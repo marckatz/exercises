@@ -1,7 +1,7 @@
 import React, { Children, useEffect, useState } from "react";
 import Workout from "./Workout";
 
-function Favorites(){
+function BeginWorkout(){
     const [favorites, setFavorites] = useState([])
 
     useEffect(() => {
@@ -15,10 +15,10 @@ function Favorites(){
 
     return (
         <div>
-            <h2>Example Favorites</h2>
+            <h2>My Routines</h2>
             {favorites}
         </div>
     )
 }
 
-export default Favorites
+export default BeginWorkout

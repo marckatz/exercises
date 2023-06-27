@@ -3,8 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar"
 import Home from "./Home"
 import History from "./History";
-import Favorites from "./Favorites";
-import Browse from "./Browse";
+import BeginWorkout from "./BeginWorkout";
+import Exercises from "./Exercises";
 
 function App(){
     return (
@@ -17,11 +17,11 @@ function App(){
                 <Route path="/history">
                     <History />
                 </Route>
-                <Route path="/favorites">
-                    <Favorites />
+                <Route path="/beginworkout">
+                    <BeginWorkout />
                 </Route>
-                <Route path="/browse">
-                    <Browse />
+                <Route path="/exercise">
+                    <Exercises />
                 </Route>
             </Switch>
         </div>

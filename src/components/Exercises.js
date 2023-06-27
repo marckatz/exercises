@@ -1,5 +1,5 @@
 import React, { Children, useEffect, useState } from "react";
-import Exercise from "./Exercise";
+import ExerciseList from "./ExerciseList";
 
 function Browse(){
     const apikey = "BKMqWAGjMtOVWzFo/8vxwg==KwbEyVqZ4bH5TYrM"
@@ -33,7 +33,7 @@ function Browse(){
     }
 
     function displayReturned(exercises){
-        return Children.toArray(exercises.map(exercise => <li><Exercise exerciseObj={exercise}/></li>))
+        return Children.toArray(exercises.map(exercise => <li><ExerciseList exerciseObj={exercise}/></li>))
     }
 
     function handleMuscleChange(e){
