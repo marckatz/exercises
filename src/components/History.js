@@ -27,9 +27,9 @@ function History(){
     })
 
     return (
-        <div>
+        <div className="workout-container">
             <h2>Example History</h2>
-            {workoutList}
+            <div className="workout-grid">{workoutList}</div>
             <WorkoutForm addWorkout={addWorkout}/>
         </div>
     )
