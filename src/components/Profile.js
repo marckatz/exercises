@@ -50,12 +50,12 @@ function Profile() {
 
   return (
     <div>
-      <div>
+      <div className="profile-card">
         <h2 className="profile">Profile</h2>
-        <p>Name: {name}</p>
-        <p>Streak: </p>
-        <p>Total Workouts: {totalWorkouts}</p>
-        <p>Workouts Per Week: {workoutsPerWeek}</p>
+        <p className="subheading">Name: {name}</p>
+        <p className="subheading">Streak: </p>
+        <p className="subheading">Total Workouts: {totalWorkouts}</p>
+        <p className="subheading">Workouts Per Week: {workoutsPerWeek}</p>
       </div>
       <div className="button-div">
         <button onClick={handleBeginWorkout} className="button-main" >Begin Workout</button>

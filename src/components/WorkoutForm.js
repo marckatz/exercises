@@ -64,7 +64,7 @@ function WorkoutForm({ addWorkout }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="workout-form" onSubmit={handleSubmit}>
             <p>Time: {Math.floor((startTime-Date.now) / 1000)}</p>
             <input type="datetime-local" value={newDateTime} onChange={handleDateTimeChange} />
             <label htmlFor="duration">Duration (minutes):</label>
