@@ -14,9 +14,9 @@ function WorkoutCard ({workout}) {
     ))
     return (
         <div className="workout-card">
-            <h4><strong>Workout:</strong> {id}</h4>
+            <h4 className="workout-header"><strong>Workout:</strong> {id}</h4>
             <h4><strong>Date:</strong> {date}</h4>
-            <h4><strong>Time:</strong> {time}</h4>
+            <h4 className="workout-time"><strong>Time:</strong> {time}</h4>
             <h4><strong>Duration:</strong> {duration} minutes</h4>
             <h4><strong>Exercises:</strong></h4>
             <ul className="exercise-list">{renderExercises}</ul>

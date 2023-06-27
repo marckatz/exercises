@@ -258,12 +258,16 @@ code {
 }
 
 .workout-card {
-  border:1px solid #ccc;
+  border:5px solid black;
   padding: 10px;
   margin-bottom: 10px;
   background-color: #FFA41B;
   font-size: 20px;
   border-radius: 20px;
+}
+
+.workout-header {
+  text-align: center;
 }
 
 .dropdown-menu{
