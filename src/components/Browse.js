@@ -7,6 +7,7 @@ function Browse(){
     const [page, setPage] = useState(0)
     const [returnedExercises, setReturned] = useState([])
     const [selected, setSelected] = useState (false)
+    const [selectEquipment, setSelectEquipment] = useState (false)
 
 function handleChange (e) {
   setSelected (e.target.value)
@@ -54,7 +55,7 @@ function handleChange (e) {
     }
 
     return (
-        <div>
+    <div>
             <h2>Search:</h2>
             {/* <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Search Muscle" value={muscle} onChange={handleMuscleChange}/>
@@ -65,25 +66,37 @@ function handleChange (e) {
             </ul>
             <button onClick={previousPage}>&lt;</button>
             <button onClick={nextPage}>&gt;</button>
-            <div className="Filter">
-        <select name="filter" onChange={handleMuscleChange}>
-          <option value="All">Any Body Part</option>
-          <option value="abdominals">Abdominals</option>
-          <option value="abductors">Abductors</option>
-          <option value="adductors">Adductors</option>
-          <option value="biceps">Biceps</option>
-          <option value="chest">Chest</option>
-          <option value="forearms">Forearms</option>
-          <option value="glutes">Glutes</option>
-          <option value="hamstrings">Hamstrings</option>
-          <option value="lats">Lats</option>
-          <option value="lower_back">Lower Back</option>
-          <option value="middle_back">Middle Back</option>
-          <option value="neck">Neck</option>
-          <option value="quadriceps">Quadriceps</option>
-          <option value="traps">Traps</option>
-          <option value="triceps">Triceps</option>
-        </select>
+        <div className="dropdown-menu">
+            <select name="dropdown-menu" onChange={handleMuscleChange}>
+            <option value="All">Select Muscle</option>
+            <option value="All Body Parts">All Muscles</option>
+            <option value="abdominals">Abdominals</option>
+            <option value="abductors">Abductors</option>
+            <option value="adductors">Adductors</option>
+            <option value="biceps">Biceps</option>
+            <option value="chest">Chest</option>
+            <option value="forearms">Forearms</option>
+            <option value="glutes">Glutes</option>
+            <option value="hamstrings">Hamstrings</option>
+            <option value="lats">Lats</option>
+            <option value="lower_back">Lower Back</option>
+            <option value="middle_back">Middle Back</option>
+            <option value="neck">Neck</option>
+            <option value="quadriceps">Quadriceps</option>
+            <option value="traps">Traps</option>
+            <option value="triceps">Triceps</option>
+            </select>
+            
+        <div className= "equipment-menu">
+            <div>
+            <select name="equipment-menu" onChange={handleMuscleChange}>
+            <option value="All">Select Equipment</option>
+            <option value="All Equipment">All Equipment</option>
+            <option value="other">Other</option>
+            <option value="body_only">Body Only</option>
+            </select>
+        </div>
+        </div>
       </div>
       <div>
       <div className='menu-container'>
@@ -91,6 +104,7 @@ function handleChange (e) {
         </div>
 
         <div className={`dropdown-menu ${selected? 'active' : 'inactive'}`} >
+        <div className={`equipment-menu ${selected? 'active' : 'inactive'}`} ></div>
           <ul></ul>
         </div>
         </div>
