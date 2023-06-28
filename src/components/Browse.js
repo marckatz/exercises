@@ -22,15 +22,14 @@ function Browse(){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(apikey)
-        // fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
-        //     headers:{
-        //         "X-Api-Key":apikey,
-        //         "content-type":"application/json"
-        //     }
-        // })
-        // .then(r => r.json())
-        // .then(exercises => setReturned(exercises))
+        fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
+            headers:{
+                "X-Api-Key":apikey,
+                "content-type":"application/json"
+            }
+        })
+        .then(r => r.json())
+        .then(exercises => setReturned(exercises))
     }
 
     function displayReturned(exercises){
