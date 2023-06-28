@@ -2,7 +2,7 @@ import React, { Children, useEffect, useState } from "react";
 import Exercise from "./Exercise";
 
 function Browse(){
-    const apikey = "BKMqWAGjMtOVWzFo/8vxwg==KwbEyVqZ4bH5TYrM"
+    const apikey = process.env.REACT_APP_EXERCISE_API_KEY
     const [muscle, setMuscle] = useState("")
     const [page, setPage] = useState(0)
     const [returnedExercises, setReturned] = useState([])

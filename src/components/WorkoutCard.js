@@ -1,18 +1,25 @@
 
-function WorkoutCard ({workout, exercises}) {
+function WorkoutCard ({workout}) {
 
-    const {id, date, time, duration} = workout
+    const {id, date, time, duration, exercises} = workout
+    
     const renderExercises = exercises.map((exercise, index) => (
         <li key={index}>
-            <p>Name: {exercise.name}</p>
-            <p>Sets: {exercise.sets}</p>
-            <p>Reps: {exercise.reps}</p>
+            <p><strong>{exercise.name}</strong></p>
+            <ul>
+                <li><strong>Sets:</strong> {exercise.sets}</li>
+                <li><strong>Reps:</strong> {exercise.reps}</li>
+            </ul>
         </li>
     ))
     return (
         <div className="workout-card">
-            <p>Workout: {id}</p>
-            <ul>{renderExercises}</ul>
+            <h4><strong>Workout:</strong> {id}</h4>
+            <h4><strong>Date:</strong> {date}</h4>
+            <h4><strong>Time:</strong> {time}</h4>
+            <h4><strong>Duration:</strong> {duration} minutes</h4>
+            <h4><strong>Exercises:</strong></h4>
+            <ul className="exercise-list">{renderExercises}</ul>
         </div>
 
     )
