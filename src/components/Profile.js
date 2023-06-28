@@ -2,7 +2,7 @@ import React from "react";
 import Modal from './Modal';
 import { useState} from "react"
 
-function Profile(){
+function Profile({totalWorkouts}){
     const [openModal, setOpenModal] = useState(false);
     return (
         <div>
@@ -10,7 +10,7 @@ function Profile(){
                 <h2 className="profile">Profile</h2>
                 <p>Name: </p>
                 <p>Streak: </p>
-                <p>Total Workouts: </p>
+                <p>Total Workouts: {totalWorkouts}</p>
                 <p>Workouts Per Week: </p>
             </div>
             <div className= "button-div">

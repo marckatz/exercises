@@ -9,8 +9,6 @@ const Modal = ({ open, onClose }) => {
         headers:{"Content-Type": "application/json"},
         body:JSON.stringify(workoutObj)
     })
-    // .then(r=>r.json())
-    // .then(workout => setHistory(h => [...h, workout]))
   }
   
   
@@ -32,14 +30,6 @@ const Modal = ({ open, onClose }) => {
           </div>
           <div>
             <WorkoutForm addWorkout={addWorkout}/>
-          </div>
-          <div className='btnContainer'>
-            <button className='btnPrimary'>
-              <span className='bold'> End Workout</span>
-            </button>
-            <button className='btnOutline'>
-              <span className='bold'>Cancel Workout</span>
-            </button>
           </div>
         </div>
       </div>

@@ -19,9 +19,12 @@ function Home(){
         workout={workout}
         />
     ))
+
+    const totalWorkouts = workouts.length
+
     return (
         <div>
-            <Profile />
+            <Profile totalWorkouts={totalWorkouts}/>
             <h1>Sample Workouts</h1>
             <div className="workout-grid">{renderWorkouts}</div>
         </div>
