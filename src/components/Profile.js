@@ -2,31 +2,56 @@ import React, { useEffect, useState } from "react";
 import Modal from './Modal';
 import profileData from "./db.json";
 
-function Profile() {
-  const [openModal, setOpenModal] = useState(false);
-  const [workoutsPerWeek, setWorkoutsPerWeek] = useState(0);
+function Profile({workouts, profile}) {
+    const [openModal, setOpenModal] = useState(false);
 
-  const { name } = profileData.profile[0];
-  const totalWorkouts = profileData.workouts.length;
+    const name = profile.name;
+    const totalWorkouts = workouts.length;
 
-  useEffect(() => {
-    const workoutsThisWeek = getWorkoutsThisWeek();
-    setWorkoutsPerWeek(workoutsThisWeek.length);
-  }, []);
+    function getWorkoutsThisWeek() {
+        const workouts = profileData.workouts;
+        let workoutsThisWeek = 0
+        const lastSunday = new Date()
+        lastSunday.setDate(lastSunday.getDate() - lastSunday.getDay())
+        workouts.forEach(workout => {
+            const workoutDate = new Date(workout.date)
+            if(workoutDate > lastSunday){
+                workoutsThisWeek++
+            }
+        })
+        return workoutsThisWeek
+    }
 
-  function getWorkoutsThisWeek() {
-    const workouts = profileData.workouts;
-    const currentDate = new Date();
-    const startOfWeek = getStartOfWeek(currentDate);
-    const endOfWeek = getEndOfWeek(currentDate);
+    function hasWorkoutOnDate(date, listOfDates){
+        for(const d of listOfDates){
+            if(d - date === 0){
+                return true
+            }
+        }
+        return false
+    }
 
-    const workoutsThisWeek = workouts.filter((workout) => {
-      const workoutDate = new Date(workout.date);
-      return workoutDate >= startOfWeek && workoutDate <= endOfWeek;
-    });
+    function getWorkoutStreak(){
+        let yesterday = new Date()
+        yesterday = new Date(yesterday.getFullYear()+"-"+(yesterday.getMonth()+1)+"-"+yesterday.getDate())
+        yesterday.setDate(yesterday.getDate()-1)
+        const listOfDates = workouts.map(workout => new Date(workout.date))
+        let streak = 0
+        while(streak < workouts.length){
+            if(hasWorkoutOnDate(yesterday, listOfDates)){
+                streak++
+                yesterday.setDate(yesterday.getDate()-1)
+            }
+            else{
+                break
+            }
+        }
+        return streak
+    }
 
-    return workoutsThisWeek;
-  }
+    const handleBeginWorkout = () => {
+        setOpenModal(true);
+    };
 
   function getStartOfWeek(date) {
     const day = date.getDay();
@@ -53,9 +78,9 @@ function Profile() {
       <div className="profile-card">
         <h2 className="profile">Profile</h2>
         <p className="subheading">Name: {name}</p>
-        <p className="subheading">Streak: </p>
+        <p className="subheading">Streak: {getWorkoutStreak()}</p>
         <p className="subheading">Total Workouts: {totalWorkouts}</p>
-        <p className="subheading">Workouts Per Week: {workoutsPerWeek}</p>
+        <p className="subheading">Workouts Per Week: {getWorkoutsThisWeek()}</p>
       </div>
       <div className="button-div">
         <button onClick={handleBeginWorkout} className="button-main" >Begin Workout</button>

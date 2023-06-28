@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 
 function WorkoutForm({ addWorkout }) {
     const [newDateTime, setDateTime] = useState("")
@@ -10,8 +10,21 @@ function WorkoutForm({ addWorkout }) {
     const [newExerciseName, setNewExerciseName] = useState("")
     const [newExerciseReps, setNewExerciseReps] = useState(0)
     const [newExerciseSets, setNewExerciseSets] = useState(0)
-    const [startTime, setStartTime] = useState(Date.now)
     const [timeSpent, setTimeSpent] = useState(0)
+    const [paused, setPaused] = useState(false)
+
+    function handlePause(e){
+        e.preventDefault()
+        setPaused(!paused)
+    }
+
+    useEffect(() => {
+        let timerInterval
+        if(!paused){
+            timerInterval = setInterval(() => setTimeSpent(t => t+1 ),10)
+        }
+        return () => clearInterval(timerInterval)
+    },[paused, timeSpent])
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -63,9 +76,14 @@ function WorkoutForm({ addWorkout }) {
         setNewExerciseSets(0)
     }
 
+    const hours = Math.floor(timeSpent / 360000)
+    const minutes = Math.floor((timeSpent % 360000) / 6000);
+    const seconds = Math.floor((timeSpent % 6000) / 100);
+    const msecs = Math.floor((timeSpent % 100))
+
     return (
-        <form className="workout-form" onSubmit={handleSubmit}>
-            <p>Time: {Math.floor((startTime-Date.now) / 1000)}</p>
+        <form onSubmit={handleSubmit}>
+            <p>Time: {hours}:{minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}:{msecs.toString().padStart(2, "0")}</p>
             <input type="datetime-local" value={newDateTime} onChange={handleDateTimeChange} />
             <label htmlFor="duration">Duration (minutes):</label>
             <input type="number" id="duration" value={newDuration} onChange={handleDurationChange} />
@@ -88,8 +106,8 @@ function WorkoutForm({ addWorkout }) {
                 <button className='btnPrimary' onClick={handleSubmit}>
                     <span className='bold'> Submit Workout</span>
                 </button>
-                <button className='btnOutline'>
-                    <span className='bold'>Cancel Workout</span>
+                <button className='btnPrimary' onClick={handlePause}>
+                    <span className='bold'>{paused?"Resume":"Pause"} timer</span>
                 </button>
             </div>
         </form>
