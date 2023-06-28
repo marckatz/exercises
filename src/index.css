@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -48,5 +50,13 @@ code {
   background-color: #2e4a62;
   border: none;
   margin: 0;
+}
+
+.workout-card {
+  border:1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #456f93;
+  font-size: 20px;
 }
 

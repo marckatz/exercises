@@ -10,7 +10,7 @@ function WorkoutCard ({workout, exercises}) {
         </li>
     ))
     return (
-        <div>
+        <div className="workout-card">
             <p>Workout: {id}</p>
             <ul>{renderExercises}</ul>
         </div>
