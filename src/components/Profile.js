@@ -1,14 +1,17 @@
 import React from "react";
 import Modal from './Modal';
 import { useState} from "react"
+import profileData from "./db.json"
 
 function Profile({totalWorkouts}){
     const [openModal, setOpenModal] = useState(false);
+
+    const {name, streak, totalWorkouts, workoutsPerWeek} = profileData.profile[0]
     return (
         <div>
             <div>
                 <h2 className="profile">Profile</h2>
-                <p>Name: </p>
+                <p>Name: {name} </p>
                 <p>Streak: </p>
                 <p>Total Workouts: {totalWorkouts}</p>
                 <p>Workouts Per Week: </p>
