@@ -34,7 +34,7 @@ function WorkoutForm({ addWorkout }) {
     }
 
     function handleDurationChange(e) {
-        setDuration(e.target.value)
+        setDuration(+e.target.value)
     }
 
     function handleNameChange(e) {
@@ -42,11 +42,11 @@ function WorkoutForm({ addWorkout }) {
     }
 
     function handleRepsChange(e) {
-        setNewExerciseReps(e.target.value)
+        setNewExerciseReps(+e.target.value)
     }
 
     function handleSetsChange(e) {
-        setNewExerciseSets(e.target.value)
+        setNewExerciseSets(+e.target.value)
     }
 
     function addNewExercise(name, sets, reps) {
