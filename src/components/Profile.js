@@ -53,26 +53,6 @@ function Profile({workouts, profile}) {
         setOpenModal(true);
     };
 
-  function getStartOfWeek(date) {
-    const day = date.getDay();
-    const diff = date.getDate() - day + (day === 0 ? -6 : 1); 
-    const startOfWeek = new Date(date.setDate(diff));
-    startOfWeek.setHours(0, 0, 0, 0);
-    return startOfWeek;
-  }
-
-  function getEndOfWeek(date) {
-    const startOfWeek = getStartOfWeek(date);
-    const endOfWeek = new Date(startOfWeek);
-    endOfWeek.setDate(startOfWeek.getDate() + 6);
-    endOfWeek.setHours(23, 59, 59, 999);
-    return endOfWeek;
-  }
-
-  const handleBeginWorkout = () => {
-    setOpenModal(true);
-  };
-
   return (
     <div>
       <div className="profile-card">
