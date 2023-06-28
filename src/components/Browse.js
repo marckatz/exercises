@@ -6,6 +6,11 @@ function Browse(){
     const [muscle, setMuscle] = useState("")
     const [page, setPage] = useState(0)
     const [returnedExercises, setReturned] = useState([])
+    const [selected, setSelected] = useState (false)
+
+function handleChange (e) {
+  setSelected (e.target.value)
+}
 
     useEffect(() => {
         if(muscle){
@@ -18,7 +23,7 @@ function Browse(){
             .then(r => r.json())
             .then(exercises => setReturned(exercises))
         }
-    },[page])
+    },[page,muscle])
 
     function handleSubmit(e){
         e.preventDefault()
@@ -51,15 +56,45 @@ function Browse(){
     return (
         <div>
             <h2>Search:</h2>
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Search Muscle" value={muscle} onChange={handleMuscleChange}/>
                 <input type="submit" />
-            </form>
+            </form> */}
             <ul>
                 {displayReturned(returnedExercises)}
             </ul>
             <button onClick={previousPage}>&lt;</button>
             <button onClick={nextPage}>&gt;</button>
+            <div className="Filter">
+        <select name="filter" onChange={handleMuscleChange}>
+          <option value="All">Any Body Part</option>
+          <option value="abdominals">Abdominals</option>
+          <option value="abductors">Abductors</option>
+          <option value="adductors">Adductors</option>
+          <option value="biceps">Biceps</option>
+          <option value="chest">Chest</option>
+          <option value="forearms">Forearms</option>
+          <option value="glutes">Glutes</option>
+          <option value="hamstrings">Hamstrings</option>
+          <option value="lats">Lats</option>
+          <option value="lower_back">Lower Back</option>
+          <option value="middle_back">Middle Back</option>
+          <option value="neck">Neck</option>
+          <option value="quadriceps">Quadriceps</option>
+          <option value="traps">Traps</option>
+          <option value="triceps">Triceps</option>
+        </select>
+      </div>
+      <div>
+      <div className='menu-container'>
+        <div onClick={()=>{setSelected(!selected)}}>
+        </div>
+
+        <div className={`dropdown-menu ${selected? 'active' : 'inactive'}`} >
+          <ul></ul>
+        </div>
+        </div>
+        </div>
         </div>
     )
 }
