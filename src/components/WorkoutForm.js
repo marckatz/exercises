@@ -22,6 +22,10 @@ function WorkoutForm({addWorkout}){
             exercises:exerciseList
         }
         addWorkout(workoutObj)
+        setDateTime("")
+        setDuration(0)
+        setExercises([])
+        setExerciseList([])
     }
 
     function handleDateTimeChange(e){

@@ -1,4 +1,17 @@
 {
+
+    "profile": [
+      {
+        "name": "name",
+        "streak": "3 Days",
+        "Total Workouts": "5",
+        "Workouts Per Week": "4"
+        
+
+
+      }
+    ],
+
     "workouts": [
         {
             "id": 1,
