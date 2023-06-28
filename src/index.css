@@ -219,3 +219,8 @@ code {
   background-color: #456f93;
   font-size: 20px;
 }
+
+.exercise-list li{
+  list-style: none;
+  margin-left: 1.5em;
+}

@@ -1,5 +1,4 @@
 import React, { Children, useEffect, useState } from "react";
-import Workout from "./Workout";
 
 function Favorites(){
     const [favorites, setFavorites] = useState([])

@@ -14,7 +14,6 @@ function WorkoutForm({addWorkout}){
     function handleSubmit(e){
         e.preventDefault()
         const tIndex = newDateTime.indexOf('T')
-        console.log(newDateTime)
         const workoutObj = {
             date:newDateTime.slice(0,tIndex),
             time:newDateTime.slice(tIndex+1),
