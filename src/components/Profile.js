@@ -3,7 +3,11 @@ import React from "react";
 function Profile(){
     return (
         <div>
-            <h3>Example Profile</h3>
+            <h2 className="profile">Profile</h2>
+            <p>Name: </p>
+            <p>Streak: </p>
+            <p>Total Workouts:</p>
+            <p>Workouts Per Week: </p>
         </div>
     )
 }
