@@ -1,6 +1,6 @@
 import React from "react";
 
-function Excersize({exerciseObj}){
+function Excercise({exerciseObj}){
     const {name, type, muscle, equipment, difficulty, instructions} = exerciseObj
     return (
         <div>
@@ -16,4 +16,4 @@ function Excersize({exerciseObj}){
     )
 }
 
-export default Excersize
+export default Excercise

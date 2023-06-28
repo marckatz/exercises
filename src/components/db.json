@@ -61,17 +61,17 @@
       "duration": 120,
       "exercises": [
         {
-          "name": "Lat Pulldown",
+          "name": "Lat Pulldown"
+          "reps": 10,
+          "sets": 4
+        },
+        
+          "name": "Step-up with knee raise",
           "reps": 10,
           "sets": 4
         },
         {
-          "name": "Bicep Curls",
-          "reps": 10,
-          "sets": 4
-        },
-        {
-          "name": "Cable Rows",
+          "name": "Kettlebell thruster",
           "reps": 10,
           "sets": 4
         }
