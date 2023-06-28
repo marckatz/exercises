@@ -71,6 +71,10 @@ code {
   width: 70%,30%;
 }
 
+.hidden-button{
+  display: none;
+}
+
 .button-main:before {
   transition: 0.5s all ease;
   position: absolute;
