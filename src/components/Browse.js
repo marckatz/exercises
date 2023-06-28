@@ -2,7 +2,7 @@ import React, { Children, useEffect, useState } from "react";
 import Exercise from "./Exercise";
 
 function Browse(){
-    const apikey = "BKMqWAGjMtOVWzFo/8vxwg==KwbEyVqZ4bH5TYrM"
+    const apikey = process.env.REACT_APP_EXERCISE_API_KEY
     const [muscle, setMuscle] = useState("")
     const [page, setPage] = useState(0)
     const [returnedExercises, setReturned] = useState([])
@@ -22,14 +22,15 @@ function Browse(){
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
-            headers:{
-                "X-Api-Key":apikey,
-                "content-type":"application/json"
-            }
-        })
-        .then(r => r.json())
-        .then(exercises => setReturned(exercises))
+        console.log(apikey)
+        // fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
+        //     headers:{
+        //         "X-Api-Key":apikey,
+        //         "content-type":"application/json"
+        //     }
+        // })
+        // .then(r => r.json())
+        // .then(exercises => setReturned(exercises))
     }
 
     function displayReturned(exercises){
