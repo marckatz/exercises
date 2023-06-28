@@ -1,86 +1,80 @@
 {
-
-    "profile": [
-      {
-        "name": "name",
-        "streak": "3 Days",
-        "Total Workouts": "5",
-        "Workouts Per Week": "4"
-        
-
-
-      }
-    ],
-
-    "workouts": [
+  "profile": 
+    {
+      "name": "Jack Skellington",
+      "streak": "",
+      "totalWorkouts": 0,
+      "workoutsPerWeek": 0
+    },
+  "workouts": [
+    {
+      "id": 1,
+      "date": "2023-06-27",
+      "time": "10:00",
+      "duration": 180,
+      "exercises": [
         {
-            "id": 1,
-            "date": "2023-06-23",
-            "time": "10:00",
-            "duration": 180,
-            "exercises": [
-                {
-                    "name": "Single-leg glute bridge",
-                    "reps": 10,
-                    "sets": 4
-                },
-                {
-                    "name": "Step-up with knee raise",
-                    "reps": 10,
-                    "sets": 4
-                },
-                {
-                    "name": "Kettlebell thruster",
-                    "reps": 10,
-                    "sets": 4
-                }
-            ]
+          "name": "Single-leg glute bridge",
+          "reps": 10,
+          "sets": 4
         },
         {
-            "id": 2,
-            "date": "2023-06-26",
-            "time": "09:00",
-            "duration": 180,
-            "exercises": [
-                {
-                    "name": "Bench Press",
-                    "reps": 10,
-                    "sets": 4
-                },
-                {
-                    "name": "Tricep Extensions",
-                    "reps": 10,
-                    "sets": 4
-                },
-                {
-                    "name": "Incline Bench Press",
-                    "reps": 10,
-                    "sets": 4
-                }
-            ]
+          "name": "Step-up with knee raise",
+          "reps": 10,
+          "sets": 4
         },
         {
-            "id": 3,
-            "date": "2023-06-21",
-            "time": "18:15",
-            "duration": 120,
-            "exercises": [
-                {
-                    "name": "Lat Pulldown",
-                    "reps": 10,
-                    "sets": 4
-                },
-                {
-                    "name": "Bicep Curls",
-                    "reps": 10,
-                    "sets": 4
-                },
-                {
-                    "name": "Cable Rows",
-                    "reps": 10,
-                    "sets": 4
-                }
-            ]
+          "name": "Kettlebell thruster",
+          "reps": 10,
+          "sets": 4
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "date": "2023-06-26",
+      "time": "09:00",
+      "duration": 180,
+      "exercises": [
+        {
+          "name": "Bench Press",
+          "reps": 10,
+          "sets": 4
+        },
+        {
+          "name": "Tricep Extensions",
+          "reps": 10,
+          "sets": 4
+        },
+        {
+          "name": "Incline Bench Press",
+          "reps": 10,
+          "sets": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "date": "2023-06-21",
+      "time": "18:15",
+      "duration": 120,
+      "exercises": [
+        {
+          "name": "Lat Pulldown",
+          "reps": 10,
+          "sets": 4
+        },
+        {
+          "name": "Step-up with knee raise",
+          "reps": 10,
+          "sets": 4
+        },
+        {
+          "name": "Kettlebell thruster",
+          "reps": 10,
+          "sets": 4
+        }
+      ]
+    }
+  ]
 }

@@ -1,8 +1,18 @@
 import React from 'react';
+import WorkoutForm from './WorkoutForm';
 
 const Modal = ({ open, onClose }) => {
-  if (!open) return null;
-  return (
+
+  function addWorkout(workoutObj){
+    fetch('http://localhost:3001/workouts/',{
+        method:"POST",
+        headers:{"Content-Type": "application/json"},
+        body:JSON.stringify(workoutObj)
+    })
+  }
+  
+  
+  return open?(
     <div onClick={onClose} className='overlay'>
       <div
         onClick={(e) => {
@@ -15,21 +25,16 @@ const Modal = ({ open, onClose }) => {
             X
           </p>
           <div className='content'>
-            <h1>Workout Started</h1>
-            <p>blah blah blah</p>
+            <h1>Start Workout</h1>
           </div>
-          <div className='btnContainer'>
-            <button className='btnPrimary'>
-              <span className='bold'> End Workout</span>
-            </button>
-            <button className='btnOutline'>
-              <span className='bold'>Cancel Workout</span>
-            </button>
+          <div>
+            <WorkoutForm addWorkout={addWorkout}/>
           </div>
         </div>
       </div>
     </div>
-  );
+  ):
+  null;
 };
 
 export default Modal;

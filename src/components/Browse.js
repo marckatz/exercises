@@ -1,57 +1,57 @@
 import React, { Children, useEffect, useState } from "react";
 import Exercise from "./Exercise";
 
-function Browse(){
-    const apikey = "BKMqWAGjMtOVWzFo/8vxwg==KwbEyVqZ4bH5TYrM"
+function Browse() {
+    const apikey = process.env.REACT_APP_EXERCISE_API_KEY
     const [muscle, setMuscle] = useState("")
     const [page, setPage] = useState(0)
     const [returnedExercises, setReturned] = useState([])
     const [selected, setSelected] = useState (false)
     const [selectEquipment, setSelectEquipment] = useState (false)
 
-function handleChange (e) {
-  setSelected (e.target.value)
-}
+    function handleChange(e) {
+        setSelected(e.target.value)
+    }
 
     useEffect(() => {
-        if(muscle){
+        if (muscle) {
             fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
-                headers:{
-                    "X-Api-Key":apikey,
-                    "content-type":"application/json"
+                headers: {
+                    "X-Api-Key": apikey,
+                    "content-type": "application/json"
                 }
             })
-            .then(r => r.json())
-            .then(exercises => setReturned(exercises))
+                .then(r => r.json())
+                .then(exercises => setReturned(exercises))
         }
-    },[page,muscle])
+    }, [page, muscle])
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault()
         fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
-            headers:{
-                "X-Api-Key":apikey,
-                "content-type":"application/json"
+            headers: {
+                "X-Api-Key": apikey,
+                "content-type": "application/json"
             }
         })
-        .then(r => r.json())
-        .then(exercises => setReturned(exercises))
+            .then(r => r.json())
+            .then(exercises => setReturned(exercises))
     }
 
-    function displayReturned(exercises){
-        return Children.toArray(exercises.map(exercise => <li><Exercise exerciseObj={exercise}/></li>))
+    function displayReturned(exercises) {
+        return Children.toArray(exercises.map(exercise => <li><Exercise exerciseObj={exercise} /></li>))
     }
 
-    function handleMuscleChange(e){
+    function handleMuscleChange(e) {
         setMuscle(e.target.value)
     }
 
-    function nextPage(){
-        setPage(p => p+1)
+    function nextPage() {
+        setPage(p => p + 1)
     }
 
-    function previousPage(){
-        setPage(p => p>0?p+1:p)
+    function previousPage() {
+        setPage(p => p > 0 ? p + 1 : p)
     }
 
     return (
@@ -61,6 +61,26 @@ function handleChange (e) {
                 <input type="text" placeholder="Search Muscle" value={muscle} onChange={handleMuscleChange}/>
                 <input type="submit" />
             </form> */}
+            <div className="Filter">
+                <select name="filter" onChange={handleMuscleChange}>
+                    <option value="All">Any Body Part</option>
+                    <option value="abdominals">Abdominals</option>
+                    <option value="abductors">Abductors</option>
+                    <option value="adductors">Adductors</option>
+                    <option value="biceps">Biceps</option>
+                    <option value="chest">Chest</option>
+                    <option value="forearms">Forearms</option>
+                    <option value="glutes">Glutes</option>
+                    <option value="hamstrings">Hamstrings</option>
+                    <option value="lats">Lats</option>
+                    <option value="lower_back">Lower Back</option>
+                    <option value="middle_back">Middle Back</option>
+                    <option value="neck">Neck</option>
+                    <option value="quadriceps">Quadriceps</option>
+                    <option value="traps">Traps</option>
+                    <option value="triceps">Triceps</option>
+                </select>
+            </div>
             <ul>
                 {displayReturned(returnedExercises)}
             </ul>

@@ -178,12 +178,12 @@ code {
   margin: .5rem;
   padding: 16px 0;
   /* border: none; */
-  border: 1px solid #c60808;
+  border: 1px solid;
   /* color: #ffffff; */
 }
 
 .btnPrimary {
-  background-color: #e10606;
+  background-color: black;
   color: white;
 }
 
@@ -317,3 +317,12 @@ code {
   opacity: 1;
   cursor: pointer;
 } 
+
+.exercise-list li{
+  list-style: none;
+  margin-left: 1.5em;
+}
+
+.modalContainer {
+  background-color: #9bb7d0;
+}
