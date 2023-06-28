@@ -5,14 +5,18 @@ import WorkoutCard from "./WorkoutCard"
 function Home(){
 
     const [workouts, setWorkouts] = useState([])
+    const [profile, setProfile] = useState({name:""})
 
     useEffect(() => {
         fetch('http://localhost:3001/workouts/')
         .then(r => r.json())
         .then(w => setWorkouts(w))
+        fetch('http://localhost:3001/profile/')
+        .then(r => r.json())
+        .then(p => setProfile({name:p.name}))
     },[])
 
-    const renderWorkouts = workouts.map((workout) => (
+    const renderWorkouts = workouts.slice(0,3).map((workout) => (
         <WorkoutCard
         key={workout.id}
         workout={workout}
@@ -23,8 +27,8 @@ function Home(){
 
     return (
         <div>
-            <Profile totalWorkouts={totalWorkouts}/>
-            <h1>Sample Workouts</h1>
+            <Profile workouts={workouts} profile={profile}/>
+            <h1>Most Recent Workouts:</h1>
             <div className="workout-grid">{renderWorkouts}</div>
         </div>
     )
