@@ -270,6 +270,27 @@ code {
   text-align: center;
 }
 
+.workout-date {
+  text-align: center;
+}
+
+.workout-time {
+  text-align: center;
+}
+
+.workout-dur {
+  text-align: center;
+}
+
+.workout-exercises {
+  text-align: center;
+}
+
+.exercise-list li {
+  text-align: center;
+  list-style: none;
+}
+
 .dropdown-menu{
   position: absolute;
   top: 200px;
@@ -368,10 +389,7 @@ code {
   cursor: pointer;
 } 
 
-.exercise-list li{
-  list-style: none;
-  margin-left: 1.5em;
-}
+
 
 .modalContainer {
   background-color: #FFF6F4;
