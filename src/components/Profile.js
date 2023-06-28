@@ -14,7 +14,7 @@ function Profile(){
                 <p>Workouts Per Week: </p>
             </div>
             <div className= "button-div">
-                <button onClick={() => setOpenModal(true)} className={`button-main ${openModal?"hidden-button":""}`} >Begin Workout</button>
+                <button onClick={() => setOpenModal(true)} className="button-main" >Begin Workout</button>
                 <Modal 
                 open={openModal} 
                 onClose={() => setOpenModal(false)} />

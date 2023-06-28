@@ -67,12 +67,8 @@ code {
   color: #0ec25c;
   text-decoration: none;
   transition: 0.3s ease all;
-  z-index: 1;
+  z-index: 0;
   width: 70%,30%;
-}
-
-.hidden-button{
-  display: none;
 }
 
 .button-main:before {
