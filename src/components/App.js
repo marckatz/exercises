@@ -9,7 +9,7 @@ import Browse from "./Browse";
 function App(){
     return (
         <div>
-            <h1 className="main">FlexFit+</h1>
+            <h1></h1>
             <NavBar />
             <Switch>
                 <Route exact path="/">
