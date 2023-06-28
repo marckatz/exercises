@@ -10,8 +10,7 @@ function Home(){
         fetch('http://localhost:3001/workouts/')
         .then(r => r.json())
         .then(w => setWorkouts(w))
-
-    })
+    },[])
 
     const renderWorkouts = workouts.map((workout) => (
         <WorkoutCard
