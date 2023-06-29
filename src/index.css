@@ -294,10 +294,10 @@ code {
 .dropdown-menu{
   position: absolute;
   top: 200px;
-  right: 400px;
+  right: 200px;
   background-color: #456f93;
   border-radius: var(--border-radius);
-  padding: 10px 20px;
+  padding: 20px 2000px;
   width: 200px;
 }
 
@@ -307,7 +307,7 @@ code {
   top: -5px;
   right: 20px;
   height: 20px;
-  width: 200px;
+  width: 20px;
   background: var(--secondary-bg);
   transform: rotate(45deg);
 }
@@ -340,51 +340,51 @@ code {
   cursor: pointer;
 }
 
-.equipment-menu{
+.type-menu{
   position: absolute;
-  top: 200px;
-  right: 400px;
+  top: 0px;
+  right: 5px;
   background-color: #456f93;
   border-radius: var(--border-radius);
   padding: 10px 20px;
   width: 200px;
 }
 
-.equipment-menu{
+.type-menu{
   content: '';
   position: absolute;
   top: -1px;
-  right: 20px;
+  right: 60px;
   height: 20px;
   width: 20px;
   background: var(--secondary-bg);
   /* transform: rotate(45deg); */
  }
 
-.equipment-menu.active{
+.type-menu.active{
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   transition: var(--speed) ease;
 }
 
-.equipment-menu.inactive{
+.type-menu.inactive{
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
   transition: var(--speed) ease;
 }
-.equipment-menu ul li{
-  padding: 10px  0;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+.type-menu ul li{
+  padding: 100px  0;
+  border-top: 100px solid rgba(0, 0, 0, 0.05);
 }
 
-.equipment-menu ul li:hover a{
+.type-menu ul li:hover a{
   color: rgb(212, 33, 9);
   cursor: pointer;
 }
 
-.equipment-menu ul li:hover img{
+.type-menu ul li:hover img{
   opacity: 1;
   cursor: pointer;
 } 
@@ -437,4 +437,36 @@ code {
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.browse-card {
+    display: grid;
+    
+    grid-template-columns: repeat(3, 1fr);
+    
+    grid-auto-rows: auto;
+    
+    grid-gap: 1rem;
+    list-style: none;
+    
+    }
+    
+  .browse-card {
+    
+    border: 2px solid #e7e7e7;
+    
+    border-radius: 4px;
+    
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-items: stretch;
+    grid-area: text;
+    justify-content: space-around;
+    align-items: baseline;
+    background-color: bisque;
+    border: 1px solid black;
+    flex: 1 1 0px;
+    
 }

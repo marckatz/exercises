@@ -52,8 +52,15 @@ function Browse() {
     return (
         <div>
             <h2>Search:</h2>
+            <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
             <div className="dropdown-menu">
-                <select name="dropdown-menu" onChange={handleMuscleChange}>
+                <select name="workout" onChange={handleMuscleChange}>
                     <option value="">Select Muscle</option>
                     <option value="abdominals">Abdominals</option>
                     <option value="abductors">Abductors</option>
@@ -86,9 +93,13 @@ function Browse() {
                     </div>
                 </div>
             </div>
-            <ul>
+            <div>
+                
+            <ul className="browse-card">
                 {displayReturned(returnedExercises)}
             </ul>
+        
+            </div>
             <button onClick={previousPage}>&lt;</button>
             <button onClick={nextPage}>&gt;</button>
             {/* <div>
