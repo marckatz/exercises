@@ -12,7 +12,6 @@ function App(){
     const location = useLocation()
     return (
         <div>
-            <h1 className="main">ᕙFlexᕗFit+</h1>
             <NavBar />
             <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>

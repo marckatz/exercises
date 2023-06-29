@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function NavBar(){
     return (
         <div className="nav-header">
-            <header className="main">FlexFit+</header>
+            <header className="main">ᕙFlexᕗFit+</header>
             <div className="navbar">
                 <NavLink className="nav-link" exact to="/">Home</NavLink>
                 <NavLink className="nav-link" to="/history">History</NavLink>
