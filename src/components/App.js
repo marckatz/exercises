@@ -7,9 +7,10 @@ import Favorites from "./Favorites";
 import Browse from "./Browse";
 
 function App(){
+    document.title = "FlexFit+"
     return (
         <div>
-            <h1 className="main">FlexFit+</h1>
+            <h1 className="main">ᕙFlexᕗFit+</h1>
             <NavBar />
             <Switch>
                 <Route exact path="/">
