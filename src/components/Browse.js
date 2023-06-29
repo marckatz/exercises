@@ -16,7 +16,8 @@ function Browse() {
 
     useEffect(() => {
         if (muscle || type) {
-            const apiQuery = (muscle?"muscle="+muscle:"") + (type?"&type="+type:"") + "&offset=" + page 
+            const apiQuery = (muscle?"muscle="+muscle+"&":"") + (type?"type="+type+"&":"") + "offset=" + page 
+            console.log(apiQuery)
             fetch("https://api.api-ninjas.com/v1/exercises?"+apiQuery, {
                 headers: {
                     "X-Api-Key": apikey,
@@ -53,8 +54,7 @@ function Browse() {
             <h2>Search:</h2>
             <div className="dropdown-menu">
                 <select name="dropdown-menu" onChange={handleMuscleChange}>
-                    <option value="All">Select Muscle</option>
-                    <option value="All Body Parts">All Muscles</option>
+                    <option value="">Select Muscle</option>
                     <option value="abdominals">Abdominals</option>
                     <option value="abductors">Abductors</option>
                     <option value="adductors">Adductors</option>
@@ -75,8 +75,7 @@ function Browse() {
                 <div className="type-menu">
                     <div>
                         <select name="type-menu" onChange={handleTypeChange}>
-                            <option value="All">Select Type</option>
-                            <option value="All Types">All Types</option>
+                            <option value="">Select Type</option>
                             <option value="olympic_weightlifting">Olympic Weightlifting</option>
                             <option value="plyometrics">Plyometrics</option>
                             <option value="powerlifting">Powerlifting</option>
