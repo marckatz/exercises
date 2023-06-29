@@ -110,10 +110,19 @@ function Browse() {
                 <div className="equipment-menu">
                     <div>
                         <select name="equipment-menu" onChange={handleMuscleChange}>
-                            <option value="All">Select Equipment</option>
+                        <option value="All">Select Equipment</option>
                             <option value="All Equipment">All Equipment</option>
-                            <option value="other">Other</option>
+                            <option value="bands">Bands</option>
+                            <option value="barbell">Barbell</option>
                             <option value="body_only">Body Only</option>
+                            <option value="cable">Cable</option>
+                            <option value="dumbbell">Dumbell</option>
+                            <option value="e-z_curl_bar">Ez Curl Bar</option>
+                            <option value="foam_roll">Foam Roal</option>
+                            <option value="kettlebells">Kettlebells</option>
+                            <option value="machine">Machine</option>
+                            <option value="None">None</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                 </div>
