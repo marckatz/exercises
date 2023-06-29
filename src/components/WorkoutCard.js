@@ -1,7 +1,18 @@
+import React, { useState } from "react";
+
 
 function WorkoutCard ({workout}) {
 
     const {id, date, time, duration, exercises} = workout
+    const [favorite,setFavorite] = useState (false)
+
+    function handleFavorite (){
+        setFavorite (true)
+      }
+    
+      function handleUnFavorite (){
+        setFavorite(false)
+      }
     
     const renderExercises = exercises.map((exercise, index) => (
         <li key={index}>
@@ -20,6 +31,16 @@ function WorkoutCard ({workout}) {
             <h4><strong>Duration:</strong> {duration} minutes</h4>
             <h4><strong>Exercises:</strong></h4>
             <ul className="exercise-list">{renderExercises}</ul>
+            <li className="card">
+      <div className="details">
+        {favorite ? (
+          <button className="emoji-button favorite active"onClick={handleUnFavorite}>★</button>
+        ) : (
+          <button className="emoji-button favorite" onClick = {handleFavorite}>☆</button>
+        )}
+        <button className="emoji-button delete">🗑</button>
+      </div>
+    </li>
         </div>
 
     )

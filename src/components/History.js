@@ -10,14 +10,23 @@ function History(){
         .then(w => {setHistory(w)})
     }, [])
 
+    function moveToFavorites (id){
+        console.log(id)
+    }
+
     const workoutList = Children.toArray(history.map(w => {
-        return <WorkoutCard workout={w} />
+        return <WorkoutCard workout={w} handleMove={moveToFavorites}/>
     }))
 
     return (
         <div className="workout-container">
             <h2>Example History</h2>
+            <button>sample button</button>
             <div className="workout-grid">{workoutList}</div>
+            <li className="card">
+      <div className="details">
+      </div>
+    </li>
         </div>
     )
 }
