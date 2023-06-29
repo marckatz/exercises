@@ -258,12 +258,37 @@ code {
 }
 
 .workout-card {
-  border:1px solid #ccc;
+  border:5px solid black;
   padding: 10px;
   margin-bottom: 10px;
   background-color: #FFA41B;
   font-size: 20px;
   border-radius: 20px;
+}
+
+.workout-header {
+  text-align: center;
+}
+
+.workout-date {
+  text-align: center;
+}
+
+.workout-time {
+  text-align: center;
+}
+
+.workout-dur {
+  text-align: center;
+}
+
+.workout-exercises {
+  text-align: center;
+}
+
+.exercise-list li {
+  text-align: center;
+  list-style: none;
 }
 
 .dropdown-menu{
@@ -364,10 +389,7 @@ code {
   cursor: pointer;
 } 
 
-.exercise-list li{
-  list-style: none;
-  margin-left: 1.5em;
-}
+
 
 .modalContainer {
   background-color: #FFF6F4;

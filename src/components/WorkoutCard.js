@@ -10,7 +10,7 @@ function WorkoutCard ({workout}) {
         <li key={index}>
             <p><strong>{exercise.name}</strong></p>
             <ul>
-                <li><strong>Sets:</strong> {exercise.sets}</li>
+                <li><strong>Sets:</strong>{exercise.sets}</li>
                 <li><strong>Reps:</strong> {exercise.reps}</li>
             </ul>
         </li>
@@ -35,11 +35,11 @@ function WorkoutCard ({workout}) {
     return (
         <div className="workout-card">
             <button onClick={handleFavorite}>{isFavorited?"★":"☆"}</button>
-            <h4><strong>Workout:</strong> {id}</h4>
-            <h4><strong>Date:</strong> {date}</h4>
-            <h4><strong>Time:</strong> {time}</h4>
-            <h4><strong>Duration:</strong> {duration} minutes</h4>
-            <h4><strong>Exercises:</strong></h4>
+            <h4 className="workout-header"><strong>Workout:</strong> {id}</h4>
+            <h4 className="workout-date"><strong>Date:</strong> {date}</h4>
+            <h4 className="workout-time"><strong>Time:</strong> {time}</h4>
+            <h4 className="workout-dur"><strong>Duration:</strong> {duration} minutes</h4>
+            <h4 className="workout-exercises"><strong>Exercises:</strong></h4>
             <ul className="exercise-list">{renderExercises}</ul>
         </div>
 
