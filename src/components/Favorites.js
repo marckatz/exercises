@@ -1,21 +1,23 @@
 import React, { Children, useEffect, useState } from "react";
+import WorkoutCard from "./WorkoutCard";
 
 function Favorites(){
     const [favorites, setFavorites] = useState([])
 
     useEffect(() => {
-        setFavorites(Children.toArray([
-            // <Workout name="placeholder" />,
-            // <Workout name="placeholder" />,
-            // <Workout name="placeholder" />,
-            // <Workout name="placeholder" />,
-        ]))
-    },[])
+        fetch('http://localhost:3001/workouts/')
+        .then(r => r.json())
+        .then(w => {setFavorites(w.filter(workout => workout.favorited))})
+    }, [])
+
+    const favoritedWorkouts = favorites.map(workout => <WorkoutCard key={workout.id} workout={workout} />)
 
     return (
         <div>
             <h2>Example Favorites</h2>
-            {favorites}
+            <div className="workout-grid">
+                {favoritedWorkouts}
+            </div>
         </div>
     )
 }

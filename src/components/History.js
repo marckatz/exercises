@@ -1,4 +1,4 @@
-import React, {Children, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import WorkoutCard from "./WorkoutCard";
 
 function History(){
@@ -10,9 +10,9 @@ function History(){
         .then(w => {setHistory(w)})
     }, [])
 
-    const workoutList = Children.toArray(history.map(w => {
-        return <WorkoutCard workout={w} />
-    }))
+    const workoutList = history.map(w => {
+        return <WorkoutCard key={w.id} workout={w} />
+    })
 
     return (
         <div className="workout-container">
