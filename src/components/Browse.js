@@ -1,5 +1,6 @@
 import React, { Children, useEffect, useState } from "react";
 import Exercise from "./Exercise";
+import { motion } from "framer-motion";
 
 function Browse() {
     const apikey = process.env.REACT_APP_EXERCISE_API_KEY
@@ -16,8 +17,7 @@ function Browse() {
 
     useEffect(() => {
         if (muscle || type) {
-            const apiQuery = (muscle?"muscle="+muscle+"&":"") + (type?"type="+type+"&":"") + "offset=" + page 
-            console.log(apiQuery)
+            const apiQuery = (muscle?"muscle="+muscle:"") + (type?"&type="+type:"") + "&offset=" + page 
             fetch("https://api.api-ninjas.com/v1/exercises?"+apiQuery, {
                 headers: {
                     "X-Api-Key": apikey,
@@ -50,11 +50,17 @@ function Browse() {
     }
 
     return (
-        <div>
+        <motion.div 
+        initial={{x:"100%"}}
+        animate={{x:0}}
+        exit={{x:"-100%"}}
+        transition={{bounce:0}}
+        >
             <h2>Search:</h2>
             <div className="dropdown-menu">
                 <select name="dropdown-menu" onChange={handleMuscleChange}>
-                    <option value="">Select Muscle</option>
+                    <option value="All">Select Muscle</option>
+                    <option value="All Body Parts">All Muscles</option>
                     <option value="abdominals">Abdominals</option>
                     <option value="abductors">Abductors</option>
                     <option value="adductors">Adductors</option>
@@ -75,7 +81,8 @@ function Browse() {
                 <div className="type-menu">
                     <div>
                         <select name="type-menu" onChange={handleTypeChange}>
-                            <option value="">Select Type</option>
+                            <option value="All">Select Type</option>
+                            <option value="All Types">All Types</option>
                             <option value="olympic_weightlifting">Olympic Weightlifting</option>
                             <option value="plyometrics">Plyometrics</option>
                             <option value="powerlifting">Powerlifting</option>
@@ -102,7 +109,7 @@ function Browse() {
                     </div>
                 </div>
             </div> */}
-        </div>
+        </motion.div>
     )
 }
 

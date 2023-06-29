@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Profile from "./Profile";
 import WorkoutCard from "./WorkoutCard"
+import { motion } from "framer-motion";
 
 function Home(){
 
@@ -26,11 +27,16 @@ function Home(){
     const totalWorkouts = workouts.length
 
     return (
-        <div>
+        <motion.div
+            initial={{x:"100%"}}
+            animate={{x:0}}
+            exit={{x:"-100%"}}
+            transition={{bounce:0}}
+        >
             <Profile workouts={workouts} profile={profile}/>
             <h1>Most Recent Workouts:</h1>
             <div className="workout-grid">{renderWorkouts}</div>
-        </div>
+        </motion.div>
     )
 }
 

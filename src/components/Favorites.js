@@ -1,5 +1,6 @@
 import React, { Children, useEffect, useState } from "react";
 import WorkoutCard from "./WorkoutCard";
+import { motion } from "framer-motion";
 
 function Favorites(){
     const [favorites, setFavorites] = useState([])
@@ -13,12 +14,17 @@ function Favorites(){
     const favoritedWorkouts = favorites.map(workout => <WorkoutCard key={workout.id} workout={workout} />)
 
     return (
-        <div>
+        <motion.div 
+        initial={{x:"100%"}}
+        animate={{x:0}}
+        exit={{x:"-100%"}}
+        transition={{bounce:0}}
+        >
             <h2>Example Favorites</h2>
             <div className="workout-grid">
                 {favoritedWorkouts}
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -1,8 +1,11 @@
 import React, {useEffect, useState } from "react";
 import WorkoutCard from "./WorkoutCard";
+import { motion } from "framer-motion";
 
 function History(){
     const [history, setHistory] = useState([])
+
+    
 
     useEffect(() => {
         fetch('http://localhost:3001/workouts/')
@@ -15,10 +18,16 @@ function History(){
     })
 
     return (
-        <div className="workout-container">
+        <motion.div 
+            className="workout-container"
+            initial={{x:"100%"}}
+            animate={{x:0}}
+            exit={{x:"-100% "}}
+            transition={{bounce:0}}
+        >
             <h2>Example History</h2>
             <div className="workout-grid">{workoutList}</div>
-        </div>
+        </motion.div>
     )
 }
 
