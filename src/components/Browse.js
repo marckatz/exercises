@@ -4,18 +4,20 @@ import Exercise from "./Exercise";
 function Browse() {
     const apikey = process.env.REACT_APP_EXERCISE_API_KEY
     const [muscle, setMuscle] = useState("")
+    const [type, setType] = useState("")
     const [page, setPage] = useState(0)
     const [returnedExercises, setReturned] = useState([])
-    const [selected, setSelected] = useState (false)
-    const [selectEquipment, setSelectEquipment] = useState (false)
+    // const [selected, setSelected] = useState(false)
+    // const [selectEquipment, setSelectEquipment] = useState(false)
 
-    function handleChange(e) {
-        setSelected(e.target.value)
-    }
+    // function handleChange(e) {
+    //     setSelected(e.target.value)
+    // }
 
     useEffect(() => {
-        if (muscle) {
-            fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
+        if (muscle || type) {
+            const apiQuery = (muscle?"muscle="+muscle:"") + (type?"&type="+type:"") + "&offset=" + page 
+            fetch("https://api.api-ninjas.com/v1/exercises?"+apiQuery, {
                 headers: {
                     "X-Api-Key": apikey,
                     "content-type": "application/json"
@@ -24,19 +26,7 @@ function Browse() {
                 .then(r => r.json())
                 .then(exercises => setReturned(exercises))
         }
-    }, [page, muscle])
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}&offset=${page}`, {
-            headers: {
-                "X-Api-Key": apikey,
-                "content-type": "application/json"
-            }
-        })
-            .then(r => r.json())
-            .then(exercises => setReturned(exercises))
-    }
+    }, [page, muscle, type])
 
     function displayReturned(exercises) {
         return Children.toArray(exercises.map(exercise => <li><Exercise exerciseObj={exercise} /></li>))
@@ -44,6 +34,10 @@ function Browse() {
 
     function handleMuscleChange(e) {
         setMuscle(e.target.value)
+    }
+
+    function handleTypeChange(e){
+        setType(e.target.value)
     }
 
     function nextPage() {
@@ -55,15 +49,12 @@ function Browse() {
     }
 
     return (
-    <div>
+        <div>
             <h2>Search:</h2>
-            {/* <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Search Muscle" value={muscle} onChange={handleMuscleChange}/>
-                <input type="submit" />
-            </form> */}
-            <div className="Filter">
-                <select name="filter" onChange={handleMuscleChange}>
-                    <option value="All">Any Body Part</option>
+            <div className="dropdown-menu">
+                <select name="dropdown-menu" onChange={handleMuscleChange}>
+                    <option value="All">Select Muscle</option>
+                    <option value="All Body Parts">All Muscles</option>
                     <option value="abdominals">Abdominals</option>
                     <option value="abductors">Abductors</option>
                     <option value="adductors">Adductors</option>
@@ -80,55 +71,38 @@ function Browse() {
                     <option value="traps">Traps</option>
                     <option value="triceps">Triceps</option>
                 </select>
+
+                <div className="type-menu">
+                    <div>
+                        <select name="type-menu" onChange={handleTypeChange}>
+                            <option value="All">Select Type</option>
+                            <option value="All Types">All Types</option>
+                            <option value="olympic_weightlifting">Olympic Weightlifting</option>
+                            <option value="plyometrics">Plyometrics</option>
+                            <option value="powerlifting">Powerlifting</option>
+                            <option value="strength">Strength</option>
+                            <option value="stretching">Stretching</option>
+                            <option value="strongman">Strongman</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <ul>
                 {displayReturned(returnedExercises)}
             </ul>
             <button onClick={previousPage}>&lt;</button>
             <button onClick={nextPage}>&gt;</button>
-        <div className="dropdown-menu">
-            <select name="dropdown-menu" onChange={handleMuscleChange}>
-            <option value="All">Select Muscle</option>
-            <option value="All Body Parts">All Muscles</option>
-            <option value="abdominals">Abdominals</option>
-            <option value="abductors">Abductors</option>
-            <option value="adductors">Adductors</option>
-            <option value="biceps">Biceps</option>
-            <option value="chest">Chest</option>
-            <option value="forearms">Forearms</option>
-            <option value="glutes">Glutes</option>
-            <option value="hamstrings">Hamstrings</option>
-            <option value="lats">Lats</option>
-            <option value="lower_back">Lower Back</option>
-            <option value="middle_back">Middle Back</option>
-            <option value="neck">Neck</option>
-            <option value="quadriceps">Quadriceps</option>
-            <option value="traps">Traps</option>
-            <option value="triceps">Triceps</option>
-            </select>
-            
-        <div className= "equipment-menu">
-            <div>
-            <select name="equipment-menu" onChange={handleMuscleChange}>
-            <option value="All">Select Equipment</option>
-            <option value="All Equipment">All Equipment</option>
-            <option value="other">Other</option>
-            <option value="body_only">Body Only</option>
-            </select>
-        </div>
-        </div>
-      </div>
-      <div>
-      <div className='menu-container'>
-        <div onClick={()=>{setSelected(!selected)}}>
-        </div>
+            {/* <div>
+                <div className='menu-container'>
+                    <div onClick={() => { setSelected(!selected) }}>
+                    </div>
 
-        <div className={`dropdown-menu ${selected? 'active' : 'inactive'}`} >
-        <div className={`equipment-menu ${selected? 'active' : 'inactive'}`} ></div>
-          <ul></ul>
-        </div>
-        </div>
-        </div>
+                    <div className={`dropdown-menu ${selected ? 'active' : 'inactive'}`} >
+                        <div className={`equipment-menu ${selected ? 'active' : 'inactive'}`} ></div>
+                        <ul></ul>
+                    </div>
+                </div>
+            </div> */}
         </div>
     )
 }

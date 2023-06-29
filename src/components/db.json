@@ -1,17 +1,17 @@
 {
-  "profile": 
-    {
-      "name": "Jack Skellington",
-      "streak": "",
-      "totalWorkouts": 0,
-      "workoutsPerWeek": 0
-    },
+  "profile": {
+    "name": "Jack Skellington",
+    "streak": "",
+    "totalWorkouts": 0,
+    "workoutsPerWeek": 0
+  },
   "workouts": [
     {
       "id": 1,
       "date": "2023-06-27",
       "time": "10:00",
       "duration": 180,
+      "favorited": true,
       "exercises": [
         {
           "name": "Single-leg glute bridge",
@@ -35,6 +35,7 @@
       "date": "2023-06-26",
       "time": "09:00",
       "duration": 180,
+      "favorited": false,
       "exercises": [
         {
           "name": "Bench Press",
@@ -58,6 +59,7 @@
       "date": "2023-06-21",
       "time": "18:15",
       "duration": 120,
+      "favorited": true,
       "exercises": [
         {
           "name": "Lat Pulldown",

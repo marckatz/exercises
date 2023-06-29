@@ -1,8 +1,11 @@
+import { useState } from "react"
 
 function WorkoutCard ({workout}) {
 
-    const {id, date, time, duration, exercises} = workout
+    const {id, date, time, duration, exercises, favorited} = workout
     
+    const [isFavorited, setFavorited] = useState(favorited)
+
     const renderExercises = exercises.map((exercise, index) => (
         <li key={index}>
             <p><strong>{exercise.name}</strong></p>
@@ -12,8 +15,26 @@ function WorkoutCard ({workout}) {
             </ul>
         </li>
     ))
+
+    function handleFavorite(){
+        const newFavorited = !isFavorited
+        fetch(`http://localhost:3001/workouts/${id}`,{
+            method:"PATCH",
+            headers:{"Content-Type": "application/json"},
+            body: JSON.stringify({
+                id:id,
+                date:date,
+                duration:duration,
+                exercises:exercises,
+                favorited:newFavorited
+            })
+        })    
+        setFavorited(newFavorited)
+    }
+
     return (
         <div className="workout-card">
+            <button onClick={handleFavorite}>{isFavorited?"★":"☆"}</button>
             <h4 className="workout-header"><strong>Workout:</strong> {id}</h4>
             <h4 className="workout-date"><strong>Date:</strong> {date}</h4>
             <h4 className="workout-time"><strong>Time:</strong> {time}</h4>
