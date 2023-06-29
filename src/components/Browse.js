@@ -57,10 +57,16 @@ function Browse() {
         transition={{bounce:0}}
         >
             <h2>Search:</h2>
+            <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
             <div className="dropdown-menu">
-                <select name="dropdown-menu" onChange={handleMuscleChange}>
-                    <option value="All">Select Muscle</option>
-                    <option value="All Body Parts">All Muscles</option>
+                <select name="workout" onChange={handleMuscleChange}>
+                    <option value="">Select Muscle</option>
                     <option value="abdominals">Abdominals</option>
                     <option value="abductors">Abductors</option>
                     <option value="adductors">Adductors</option>
@@ -81,8 +87,7 @@ function Browse() {
                 <div className="type-menu">
                     <div>
                         <select name="type-menu" onChange={handleTypeChange}>
-                            <option value="All">Select Type</option>
-                            <option value="All Types">All Types</option>
+                            <option value="">Select Type</option>
                             <option value="olympic_weightlifting">Olympic Weightlifting</option>
                             <option value="plyometrics">Plyometrics</option>
                             <option value="powerlifting">Powerlifting</option>
@@ -93,9 +98,13 @@ function Browse() {
                     </div>
                 </div>
             </div>
-            <ul>
+            <div>
+                
+            <ul className="browse-card">
                 {displayReturned(returnedExercises)}
             </ul>
+        
+            </div>
             <button onClick={previousPage}>&lt;</button>
             <button onClick={nextPage}>&gt;</button>
             {/* <div>
