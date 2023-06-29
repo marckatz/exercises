@@ -60,7 +60,7 @@ function Profile({workouts, profile}) {
         <p className="subheading">Name: {name}</p>
         <p className="subheading">Streak: {getWorkoutStreak()}</p>
         <p className="subheading">Total Workouts: {totalWorkouts}</p>
-        <p className="subheading">Workouts Per Week: {getWorkoutsThisWeek()}</p>
+        <p className="subheading">Workouts This Week: {getWorkoutsThisWeek()}</p>
       </div>
       <div className="button-div">
         <button onClick={handleBeginWorkout} className="button-main" >Begin Workout</button>

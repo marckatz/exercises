@@ -11,11 +11,13 @@ function WorkoutForm({ addWorkout }) {
     const [newExerciseReps, setNewExerciseReps] = useState(0)
     const [newExerciseSets, setNewExerciseSets] = useState(0)
     const [timeSpent, setTimeSpent] = useState(0)
-    const [paused, setPaused] = useState(false)
+    const [paused, setPaused] = useState(true)
+    const [pauseButton, setPauseButton] = useState("Start")
 
     function handlePause(e){
         e.preventDefault()
         setPaused(!paused)
+        setPauseButton(paused?"Resume":"Pause")
     }
 
     useEffect(() => {
@@ -107,7 +109,7 @@ function WorkoutForm({ addWorkout }) {
                     <span className='bold'> Submit Workout</span>
                 </button>
                 <button className='btnPrimary' onClick={handlePause}>
-                    <span className='bold'>{paused?"Resume":"Pause"} timer</span>
+                    <span className='bold'>{pauseButton} timer</span>
                 </button>
             </div>
         </form>

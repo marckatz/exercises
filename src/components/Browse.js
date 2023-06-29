@@ -1,5 +1,6 @@
 import React, { Children, useEffect, useState } from "react";
 import Exercise from "./Exercise";
+import { motion } from "framer-motion";
 
 function Browse() {
     const apikey = process.env.REACT_APP_EXERCISE_API_KEY
@@ -49,7 +50,12 @@ function Browse() {
     }
 
     return (
-        <div>
+        <motion.div 
+        initial={{x:"100%"}}
+        animate={{x:0}}
+        exit={{x:"-100%"}}
+        transition={{bounce:0}}
+        >
             <h2>Search:</h2>
             <div className="dropdown-menu">
                 <select name="dropdown-menu" onChange={handleMuscleChange}>
@@ -103,7 +109,7 @@ function Browse() {
                     </div>
                 </div>
             </div> */}
-        </div>
+        </motion.div>
     )
 }
 
