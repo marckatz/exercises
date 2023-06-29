@@ -445,11 +445,6 @@ code {
     grid-auto-rows: auto;
     
     grid-gap: 1rem;
-    list-style: none;
-    
-    }
-    
-  .browse-card {
     
     border: 2px solid #e7e7e7;
     
@@ -462,7 +457,7 @@ code {
     align-items: stretch;
     grid-area: text;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: stretch;
     background-color: bisque;
     border: 1px solid black;
     flex: 1 1 0px;
@@ -482,4 +477,8 @@ code {
 
 .favorite-button span:hover{
   text-shadow: 0 0 5px white;
+}
+
+.exercise-data{
+  list-style: none;
 }

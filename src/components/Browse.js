@@ -30,7 +30,7 @@ function Browse() {
     }, [page, muscle, type])
 
     function displayReturned(exercises) {
-        return Children.toArray(exercises.map(exercise => <li><Exercise exerciseObj={exercise} /></li>))
+        return Children.toArray(exercises.map(exercise => <Exercise exerciseObj={exercise} />))
     }
 
     function handleMuscleChange(e) {
@@ -100,9 +100,9 @@ function Browse() {
             </div>
             <div>
                 
-            <ul className="browse-card">
+            <div className="browse-card">
                 {displayReturned(returnedExercises)}
-            </ul>
+            </div>
         
             </div>
             <button onClick={previousPage}>&lt;</button>

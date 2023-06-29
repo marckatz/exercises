@@ -5,7 +5,7 @@ function Excercise({exerciseObj}){
     return (
         <div className="workout-card">
             <h3>{name}</h3>
-            <ul>
+            <ul className="exercise-data">
                 <li>Type: {type}</li>
                 <li>Muscle: {muscle}</li>
                 <li>Equipment: {equipment}</li>
