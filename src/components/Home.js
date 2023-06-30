@@ -17,7 +17,7 @@ function Home(){
         .then(p => setProfile({name:p.name}))
     },[])
 
-    const renderWorkouts = workouts.slice(0,3).map((workout) => (
+    const renderWorkouts = workouts.slice(-3).map((workout) => (
         <WorkoutCard
         key={workout.id}
         workout={workout}

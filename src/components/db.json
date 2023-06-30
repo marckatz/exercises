@@ -77,6 +77,24 @@
           "sets": 4
         }
       ]
+    },
+    {
+      "date": "2023-06-30",
+      "time": "09:00",
+      "duration": 123,
+      "exercises": [
+        {
+          "name": "Rickshaw Carry",
+          "reps": 12,
+          "sets": 4
+        },
+        {
+          "name": "Seated finger curl",
+          "reps": 10,
+          "sets": 3
+        }
+      ],
+      "id": 4
     }
   ]
 }
