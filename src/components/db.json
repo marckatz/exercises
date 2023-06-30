@@ -79,27 +79,10 @@
       ]
     },
     {
-      "date": "2023-06-30",
-      "time": "09:00",
-      "duration": 123,
-      "exercises": [
-        {
-          "name": "Rickshaw Carry",
-          "reps": 12,
-          "sets": 4
-        },
-        {
-          "name": "Seated finger curl",
-          "reps": 10,
-          "sets": 3
-        }
-      ],
-      "id": 4
-    },
-    {
       "date": "2023-06-28",
       "time": "09:00",
       "duration": 123,
+      "favorited": false,
       "exercises": [
         {
           "name": "Rickshaw Carry",
@@ -118,19 +101,44 @@
       "date": "2023-06-29",
       "time": "09:00",
       "duration": 123,
+      "favorited": true,
       "exercises": [
         {
-          "name": "Rickshaw Carry",
-          "reps": 12,
+          "name": "Single-leg glute bridge",
+          "reps": 10,
           "sets": 4
         },
         {
-          "name": "Seated finger curl",
+          "name": "Step-up with knee raise",
           "reps": 10,
-          "sets": 3
+          "sets": 4
+        },
+        {
+          "name": "Kettlebell thruster",
+          "reps": 10,
+          "sets": 4
         }
       ],
       "id": 6
+    },
+    {
+      "date": "2023-06-30",
+      "time": "09:00",
+      "duration": 120,
+      "exercises": [
+        {
+          "name": "Lunges",
+          "reps": 4,
+          "sets": 10
+        },
+        {
+          "name": "Squats",
+          "reps": 8,
+          "sets": 3
+        }
+      ],
+      "id": 7,
+      "favorited": true
     }
   ]
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Modal from './Modal';
-import profileData from "./db.json";
 
 function Profile({workouts, profile}) {
     const [openModal, setOpenModal] = useState(false);
@@ -9,7 +8,6 @@ function Profile({workouts, profile}) {
     const totalWorkouts = workouts.length;
 
     function getWorkoutsThisWeek() {
-        const workouts = profileData.workouts;
         let workoutsThisWeek = 0
         const lastSunday = new Date()
         lastSunday.setDate(lastSunday.getDate() - lastSunday.getDay())

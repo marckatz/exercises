@@ -26,7 +26,7 @@ function Browse() {
                 }
             })
                 .then(r => r.json())
-                .then(exercises => setReturned(exercises))
+                .then(exercises => {console.log(exercises); setReturned(exercises)})
         }
     }, [page, muscle, type])
 
