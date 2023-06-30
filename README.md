@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# FlexFit+
+The purpose of this application is to allow users to track their workouts, create new workouts, and be able to search a database of useful workouts.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Description
+This application was made with react router. There are 13 different components that make up the entire app. The whole idea behind it was we wanted a user to be able to track their workouts so they can remember their previouse workouts. We added other functionality, such as a profile aspect where a user can see their name, streak of days working out, total workouts, and thenumber of workouts they've done this week. Right under that is a begin workout button. This button autonmatically starts a timer to time your workout. As well as a form pops up so the user can create a new exercise that they want to log. On the next tab their is a history component showing users their entire history of workouts. As well as a favorite button on each workout card so users can see which workouts they like the best. The last component is a browse aspect. Users are able to browse a database filled with workouts that they can use. There are two search categories, they can search by which muscle they want to workouts along with what type of workout that they are doing.
 
-## Available Scripts
+# Getting Started
+To start this program run
+npm run server 
+npm start
 
-In the project directory, you can run:
+# Authors
+Marc Katz
+Jeff Arbelaez
+Sebastian Martinez
 
-### `npm start`
+# Version History
+This most recent version is 1.0
+Initial Release
+06/30/2023
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Acknowledgments
+Some inspiration for the application came from another application call Strong

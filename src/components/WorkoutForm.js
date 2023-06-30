@@ -14,19 +14,19 @@ function WorkoutForm({ addWorkout }) {
     const [paused, setPaused] = useState(true)
     const [pauseButton, setPauseButton] = useState("Start")
 
-    function handlePause(e){
+    function handlePause(e) {
         e.preventDefault()
         setPaused(!paused)
-        setPauseButton(paused?"Resume":"Pause")
+        setPauseButton(paused ? "Resume" : "Pause")
     }
 
     useEffect(() => {
         let timerInterval
-        if(!paused){
-            timerInterval = setInterval(() => setTimeSpent(t => t+1 ),10)
+        if (!paused) {
+            timerInterval = setInterval(() => setTimeSpent(t => t + 1), 10)
         }
         return () => clearInterval(timerInterval)
-    },[paused, timeSpent])
+    }, [paused, timeSpent])
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -84,24 +84,29 @@ function WorkoutForm({ addWorkout }) {
     const msecs = Math.floor((timeSpent % 100))
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="workout-form">
             <p>Time: {hours}:{minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}:{msecs.toString().padStart(2, "0")}</p>
-            <input type="datetime-local" value={newDateTime} onChange={handleDateTimeChange} />
-            <label htmlFor="duration">Duration (minutes):</label>
-            <input type="number" id="duration" value={newDuration} onChange={handleDurationChange} />
+            <div>
+                <br></br>
+                <label htmlFor="datetime">Date and Time:       </label>
+                <input type="datetime-local" id="datetime" value={newDateTime} onChange={handleDateTimeChange} />
+                <br></br>
+                <label htmlFor="duration">Duration (minutes): </label>
+                <input type="number" id="duration" value={newDuration} onChange={handleDurationChange} />
+            </div>
             <div>
                 <h3>Exercises:</h3>
                 <ul>
                     {exercises}
                 </ul>
                 <input type="text" placeholder="New Exercise" value={newExerciseName} onChange={handleNameChange} />
-
+                <br></br>
                 <label htmlFor="reps">Reps:</label>
                 <input type="number" id="reps" value={newExerciseReps} onChange={handleRepsChange} />
-
+                <br></br>
                 <label htmlFor="sets">Sets:</label>
                 <input type="number" id="sets" value={newExerciseSets} onChange={handleSetsChange} />
-
+                <br></br>
                 <button onClick={handleAddExercise}>Add Exercise</button>
             </div>
             <div className='btnContainer'>
