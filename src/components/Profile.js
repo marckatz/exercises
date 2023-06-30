@@ -35,11 +35,11 @@ function Profile({workouts, profile}) {
         let yesterday = new Date()
         yesterday = new Date(yesterday.getFullYear()+"-"+(yesterday.getMonth()+1)+"-"+yesterday.getDate())
         let streak = 0
+        const listOfDates = workouts.map(workout => new Date(workout.date))
         if(hasWorkoutOnDate(yesterday, listOfDates)){
             streak++
         }
         yesterday.setDate(yesterday.getDate()-1)
-        const listOfDates = workouts.map(workout => new Date(workout.date))
         while(streak < workouts.length){
             if(hasWorkoutOnDate(yesterday, listOfDates)){
                 streak++
