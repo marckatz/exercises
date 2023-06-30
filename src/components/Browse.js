@@ -18,8 +18,8 @@ function Browse() {
 
     useEffect(() => {
         if (muscle || type) {
-            const apiQuery = (muscle?"muscle="+muscle:"") + (type?"&type="+type:"") + "&offset=" + page 
-            fetch("https://api.api-ninjas.com/v1/exercises?"+apiQuery, {
+            const apiQuery = (muscle ? "muscle=" + muscle : "") + (type ? "&type=" + type : "") + "&offset=" + page
+            fetch("https://api.api-ninjas.com/v1/exercises?" + apiQuery, {
                 headers: {
                     "X-Api-Key": apikey,
                     "content-type": "application/json"
@@ -38,7 +38,7 @@ function Browse() {
         setMuscle(e.target.value)
     }
 
-    function handleTypeChange(e){
+    function handleTypeChange(e) {
         setType(e.target.value)
     }
 
@@ -51,82 +51,58 @@ function Browse() {
     }
 
     return (
-        <motion.div 
-        initial={{x:"100%"}}
-        animate={{x:0}}
-        exit={{x:"-100%"}}
-        transition={{bounce:0}}
+        <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ bounce: 0 }}
         >
             <h2>Search:</h2>
-            <button onClick={previousPage}>&lt;</button>
-            <button onClick={nextPage}>&gt;</button>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                
-            <div > <div class="drop">
 
-         <div class="drop-content">
-            
-           
-         </div>
-      </div>
-                <select className="dropdown-menu" onChange={handleMuscleChange}>
-                    <option value="">Select Muscle</option>
-                    <option value="abdominals"> Abdominals</option>
-                    <option value="abductors">Abductors</option>
-                    <option value="adductors">Adductors</option>
-                    <option value="biceps">Biceps</option>
-                    <option value="chest">Chest</option>
-                    <option value="forearms">Forearms</option>
-                    <option value="glutes">Glutes</option>
-                    <option value="hamstrings">Hamstrings</option>
-                    <option value="lats">Lats</option>
-                    <option value="lower_back">Lower Back</option>
-                    <option value="middle_back"><img src={Abs}></img>Middle Back</option>
-                    <option value="neck">Neck</option>
-                    <option value="quadriceps">Quadriceps</option>
-                    <option value="traps">Traps </option>
-                    <option value="triceps">Triceps</option>
-                </select>
-                <div>
-                        <select className="type-menu"onChange={handleTypeChange}>
-                            <option value="">Select Type</option>
-                            <option value="olympic_weightlifting">Olympic Weightlifting</option>
-                            <option value="plyometrics">Plyometrics</option>
-                            <option value="powerlifting">Powerlifting</option>
-                            <option value="strength">Strength</option>
-                            <option value="stretching">Stretching</option>
-                            <option value="strongman">Strongman</option>
-                        </select>
-                    </div>
+            <div className="dropdown-wrapper">
+                <div className="dropdown">
+                    <select className="menu" onChange={handleMuscleChange}>
+                        <option value="">Select Muscle</option>
+                        <option value="abdominals"> Abdominals</option>
+                        <option value="abductors">Abductors</option>
+                        <option value="adductors">Adductors</option>
+                        <option value="biceps">Biceps</option>
+                        <option value="chest">Chest</option>
+                        <option value="forearms">Forearms</option>
+                        <option value="glutes">Glutes</option>
+                        <option value="hamstrings">Hamstrings</option>
+                        <option value="lats">Lats</option>
+                        <option value="lower_back">Lower Back</option>
+                        <option value="middle_back"><img src={Abs}></img>Middle Back</option>
+                        <option value="neck">Neck</option>
+                        <option value="quadriceps">Quadriceps</option>
+                        <option value="traps">Traps </option>
+                        <option value="triceps">Triceps</option>
+                    </select>
                 </div>
-
-                    
-
-                    <div>
-                
-            <div className="browse-card">
-                {displayReturned(returnedExercises)}
-            </div>
-        
-            </div>
-            
-            {/* <div>
-                <div className='menu-container'>
-                    <div onClick={() => { setSelected(!selected) }}>
-                    </div>
-
-                    <div className={`dropdown-menu ${selected ? 'active' : 'inactive'}`} >
-                        <div className={`equipment-menu ${selected ? 'active' : 'inactive'}`} ></div>
-                        <ul></ul>
-                    </div>
+                <div className="dropdown">
+                    <select className="menu" onChange={handleTypeChange}>
+                        <option value="">Select Type</option>
+                        <option value="olympic_weightlifting">Olympic Weightlifting</option>
+                        <option value="plyometrics">Plyometrics</option>
+                        <option value="powerlifting">Powerlifting</option>
+                        <option value="strength">Strength</option>
+                        <option value="stretching">Stretching</option>
+                        <option value="strongman">Strongman</option>
+                    </select>
                 </div>
-            </div> */}
+            </div>
+
+
+            <div>
+                <div className="browse-card">
+                    {displayReturned(returnedExercises)}
+                </div>
+            </div>
+            <div className="navigation-wrapper">
+                <button className="back-button" onClick={previousPage}>&lt;</button>
+                <button className="next-button" onClick={nextPage}>&gt;</button>
+            </div>
         </motion.div>
     )
 }

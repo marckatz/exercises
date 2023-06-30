@@ -10,7 +10,7 @@ npm run server
 npm start
 
 # Authors
-Marc Kratz
+Marc Katz
 Jeff Arbelaez
 Sebastian Martinez
 
