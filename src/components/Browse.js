@@ -1,6 +1,7 @@
 import React, { Children, useEffect, useState } from "react";
 import Exercise from "./Exercise";
 import { motion } from "framer-motion";
+import Abs from "../MuscleIcons/chest.jpg"
 
 function Browse() {
     const apikey = process.env.REACT_APP_EXERCISE_API_KEY
@@ -57,17 +58,26 @@ function Browse() {
         transition={{bounce:0}}
         >
             <h2>Search:</h2>
-            <br></br>
+            <button onClick={previousPage}>&lt;</button>
+            <button onClick={nextPage}>&gt;</button>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
-            <div className="dropdown-menu">
-                <select name="workout" onChange={handleMuscleChange}>
+                <br></br>
+                
+            <div > <div class="drop">
+
+         <div class="drop-content">
+            
+           
+         </div>
+      </div>
+                <select className="dropdown-menu" onChange={handleMuscleChange}>
                     <option value="">Select Muscle</option>
-                    <option value="abdominals">Abdominals</option>
+                    <option value="abdominals"> Abdominals</option>
                     <option value="abductors">Abductors</option>
                     <option value="adductors">Adductors</option>
                     <option value="biceps">Biceps</option>
@@ -77,16 +87,14 @@ function Browse() {
                     <option value="hamstrings">Hamstrings</option>
                     <option value="lats">Lats</option>
                     <option value="lower_back">Lower Back</option>
-                    <option value="middle_back">Middle Back</option>
+                    <option value="middle_back"><img src={Abs}></img>Middle Back</option>
                     <option value="neck">Neck</option>
                     <option value="quadriceps">Quadriceps</option>
-                    <option value="traps">Traps</option>
+                    <option value="traps">Traps </option>
                     <option value="triceps">Triceps</option>
                 </select>
-
-                <div className="type-menu">
-                    <div>
-                        <select name="type-menu" onChange={handleTypeChange}>
+                <div>
+                        <select className="type-menu"onChange={handleTypeChange}>
                             <option value="">Select Type</option>
                             <option value="olympic_weightlifting">Olympic Weightlifting</option>
                             <option value="plyometrics">Plyometrics</option>
@@ -97,16 +105,17 @@ function Browse() {
                         </select>
                     </div>
                 </div>
-            </div>
-            <div>
+
+                    
+
+                    <div>
                 
             <div className="browse-card">
                 {displayReturned(returnedExercises)}
             </div>
         
             </div>
-            <button onClick={previousPage}>&lt;</button>
-            <button onClick={nextPage}>&gt;</button>
+            
             {/* <div>
                 <div className='menu-container'>
                     <div onClick={() => { setSelected(!selected) }}>

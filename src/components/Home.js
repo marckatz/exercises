@@ -34,7 +34,7 @@ function Home(){
             transition={{bounce:0}}
         >
             <Profile workouts={workouts} profile={profile}/>
-            <h1>Most Recent Workouts:</h1>
+            <h1>My Recent Workouts:</h1>
             <div className="workout-grid">{renderWorkouts}</div>
         </motion.div>
     )
