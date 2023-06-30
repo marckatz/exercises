@@ -35,6 +35,8 @@ function Home(){
         >
             <Profile workouts={workouts} profile={profile}/>
             <h1>My Recent Workouts:</h1>
+            <br></br>
+            <br></br>
             <div className="workout-grid">{renderWorkouts}</div>
         </motion.div>
     )

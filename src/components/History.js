@@ -25,7 +25,11 @@ function History(){
             exit={{x:"-100% "}}
             transition={{bounce:0}}
         >
-            <h2>My Past History</h2>
+            <br></br>
+            <br></br>
+            <h2>My History</h2>
+            <br></br>
+            <br></br>
             <div className="workout-grid">{workoutList}</div>
         </motion.div>
     )

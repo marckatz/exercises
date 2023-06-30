@@ -18,7 +18,7 @@ code {
 .workout-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
+  gap: 200px; 
 }
 
 .workout-column {
@@ -31,6 +31,10 @@ code {
   align-items: center;
   background-color: #525FE1;
   padding: 20px;
+  border-bottom: 4px solid black;
+  border-right: 3px solid black;
+  border-left: 3px solid black;
+  
 }
 
 .nav-link {
@@ -92,6 +96,9 @@ code {
   background-color: #525FE1;
   border: none;
   margin: 0;
+  border-top: 3px solid black;
+  border-right: 3px solid black;
+  border-left: 3px solid black;
   
 }
 
@@ -296,10 +303,10 @@ code {
 
 .dropdown-menu{
   position: absolute;
-  top: 40px;
+  top: 33px;
   right: 60%;
   border-radius: var(--border-radius);
-  padding: 30px 6px;
+  padding: 35px 36px;
   width: 200px;background-color: #F86F03;
   border: 5px solid black;
   color: #000000;
@@ -307,6 +314,7 @@ code {
   font-size: 16px;
   margin-left: 10px;
   transition: transform 200ms linear;
+  border-radius: 50px;
 }
 
 .modalContainer {
@@ -356,8 +364,21 @@ code {
   border-radius: 4px;
   cursor: pointer;
 }
-
-.browse-card {
+    
+  .browse-card {
+    
+    border: 2px solid #e7e7e7;
+    
+    border-radius: 4px;
+    display: grid;
+    grid-gap: 10px;
+    align-items: stretch;
+    grid-area: text;
+    justify-content: space-around;
+    align-items: baseline;
+    background-color: #525FE1;
+    border: 2px solid black;
+    flex: 1 1 0px;
     display: grid;
     
     grid-template-columns: repeat(3, 1fr);
@@ -366,32 +387,14 @@ code {
     
     grid-gap: 1rem;
     
-    }
-    
-  .browse-card {
-    
-    border: 2px solid #e7e7e7;
-    
-    border-radius: 4px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2px;
-    align-items: stretch;
-    grid-area: text;
-    justify-content: space-around;
-    align-items: baseline;
-    background-color: #525FE1;
-    border: 1px solid black;
-    flex: 1 1 0px;
-    
 }
 
 .type-menu{
   position: absolute;
-  top: 40px;
+  top: 33px;
   right: 35%;
   border-radius: var(--border-radius);
-  padding: 30px 10px;
+  padding: 35px 44px;
   width: 200px;background-color: #F86F03;
   border: 5px solid black;
   color: #000000;
@@ -399,4 +402,6 @@ code {
   font-size: 16px;
   margin-left: 500px;
   transition: transform 200ms linear;
+  border-radius: 50px;
 }
+

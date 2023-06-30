@@ -57,9 +57,8 @@ function Browse() {
         exit={{x:"-100%"}}
         transition={{bounce:0}}
         >
-            <h2>Search:</h2>
-            <button onClick={previousPage}>&lt;</button>
-            <button onClick={nextPage}>&gt;</button>
+                <br></br>
+                <br></br>
                 <br></br>
                 <br></br>
                 <br></br>
