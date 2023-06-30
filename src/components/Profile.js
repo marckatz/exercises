@@ -34,7 +34,7 @@ function Profile({workouts, profile}) {
     function getWorkoutStreak(){
         let yesterday = new Date()
         yesterday = new Date(yesterday.getFullYear()+"-"+(yesterday.getMonth()+1)+"-"+yesterday.getDate())
-        yesterday.setDate(yesterday.getDate()-1)
+        // yesterday.setDate(yesterday.getDate()-1)
         const listOfDates = workouts.map(workout => new Date(workout.date))
         let streak = 0
         while(streak < workouts.length){

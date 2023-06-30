@@ -57,7 +57,7 @@ function Browse() {
             exit={{ x: "-100%" }}
             transition={{ bounce: 0 }}
         >
-            <h2>Search:</h2>
+            <h1>Search:</h1>
 
             <div className="dropdown-wrapper">
                 <div className="dropdown">

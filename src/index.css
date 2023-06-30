@@ -8,6 +8,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FFF6F4;
+  background-image: url(https://t4.ftcdn.net/jpg/03/17/72/47/360_F_317724775_qHtWjnT8YbRdFNIuq5PWsSYypRhOmalS.jpg);
+}
+
+h1{
+  color:white
 }
 
 code {
@@ -306,7 +311,7 @@ button{
 
 .workout-form .btnOutline {
   background-color: transparent;
-  border: 1px solid #007bff;
+  border: 1px solid #525FE1;
   color: #007bff;
   padding: 8px 16px;
   border-radius: 4px;

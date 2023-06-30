@@ -20,7 +20,7 @@ function Favorites(){
         exit={{x:"-100%"}}
         transition={{bounce:0}}
         >
-            <h2>My Favorite Workouts</h2>
+            <h1>My Favorite Workouts</h1>
             <div className="workout-grid">
                 {favoritedWorkouts}
             </div>
