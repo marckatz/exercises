@@ -8,7 +8,7 @@
   "workouts": [
     {
       "id": 1,
-      "date": "2023-06-27",
+      "date": "2023-06-21",
       "time": "10:00",
       "duration": 180,
       "favorited": true,
@@ -56,7 +56,7 @@
     },
     {
       "id": 3,
-      "date": "2023-06-21",
+      "date": "2023-06-27",
       "time": "18:15",
       "duration": 120,
       "favorited": true,
@@ -95,6 +95,42 @@
         }
       ],
       "id": 4
+    },
+    {
+      "date": "2023-06-28",
+      "time": "09:00",
+      "duration": 123,
+      "exercises": [
+        {
+          "name": "Rickshaw Carry",
+          "reps": 12,
+          "sets": 4
+        },
+        {
+          "name": "Seated finger curl",
+          "reps": 10,
+          "sets": 3
+        }
+      ],
+      "id": 5
+    },
+    {
+      "date": "2023-06-29",
+      "time": "09:00",
+      "duration": 123,
+      "exercises": [
+        {
+          "name": "Rickshaw Carry",
+          "reps": 12,
+          "sets": 4
+        },
+        {
+          "name": "Seated finger curl",
+          "reps": 10,
+          "sets": 3
+        }
+      ],
+      "id": 6
     }
   ]
 }
