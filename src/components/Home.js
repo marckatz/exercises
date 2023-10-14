@@ -12,6 +12,7 @@ function Home(){
         fetch('http://localhost:3001/workouts/')
         .then(r => r.json())
         .then(w => setWorkouts(w))
+        console.log(workouts)
         fetch('http://localhost:3001/profile/')
         .then(r => r.json())
         .then(p => setProfile({name:p.name}))
